@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-3">
+    <div ng-include src="'views/menu_logged.html'"></div>
+  </div>
+  <div class="col-md-9">
+    <div class="alert alert-danger error" ng-if="error">{{error}}</div>
+    <h2>Order Form</h2>
+
+    <table class="table table-striped">
+      <tr>
+        <td>Order ID</td>
+        <td><input type="text" ng-model="order.OrderID" ng-init="order.OrderID=''"></td>
+      </tr>
+      <tr>
+        <td>Customer Name</td>
+        <td><input type="text" ng-model="order.customerName" ng-init="order.customerName=''"></td>
+      </tr>
+      <tr>
+        <td>Order Amount</td>
+        <td><input type="text" ng-model="order.amount" ng-init="order.amount=''"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button type="submit" class="width-35 pull-right btn btn-sm btn-primary" ng-click="formActionClick()">
+          <span class="bigger-110">{{formAction}}</span>
+        </button></td>
+      </tr>
+    </table>
+  </div>
+</div>

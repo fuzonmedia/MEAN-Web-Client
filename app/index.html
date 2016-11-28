@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MeanAppWebClient</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-ui-notification/dist/angular-ui-notification.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+
+
+    <!--- Custom Css for theme -->
+    <link rel="stylesheet" href="styles/assets/css/theme/font-awesome.css" />
+
+    <!-- text fonts -->
+    <link rel="stylesheet" href="styles/assets/css/theme/ace-fonts.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="styles/assets/css/theme/ace.css" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="styles/assets/css/theme/ace-part2.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="styles/assets/css/theme/ace-rtl.css" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="styles/assets/css/theme/ace-ie.css" />
+    <![endif]-->
+
+
+    <style>
+    .main-container {
+      padding-top: 72px !important;
+      min-height: 600px;
+    }
+</style>
+  </head>
+  <body ng-app="MeanAppWebClient" ng-controller="AppCtrl">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <!-- Fixed navbar -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+   <div class="container">
+     <div class="navbar-header">
+       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="#">Project Name</a>
+     </div>
+     <div class="navbar-collapse collapse" style="height: 1px;">
+       <ul class="nav navbar-nav navbar-right">
+          <li class=""><a href="#/">Home</a></li>
+         <li class=""><a href="#/about">About</a></li>
+         <li class=""><a href="#/dashboard" ng-if="$parent.AuthCheck">Dashboard</a></li>
+         <li class=""><a href="#/login" ng-if="!$parent.AuthCheck">Login</a></li>
+         <li class=""><a href="#/register" ng-if="!$parent.AuthCheck">Register</a></li>
+        <li class=""><a href="" ng-click="userLogout()" ng-if="$parent.AuthCheck">Logout</a></li>
+       </ul>
+     </div><!--/.nav-collapse -->
+   </div>
+  </div>
+
+    <div class="container main-container">
+      <spinner name="html5spinner" ng-cloak="">
+        <div class="overlay"></div>
+        <div class="spinner">
+          <div class="double-bounce1"></div>
+          <div class="double-bounce2"></div>
+        </div>
+        <div class="please-wait">Please Wait...</div>
+      </spinner>
+    <div ng-view=""></div>
+    </div>
+    <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+        <div id="footer">
+
+              <div class="container">
+                <p class="text-muted">
+                <div style="display:none">Designed & Developed by <a href="http://www.fuzonmedia.com">www.fuzonmedia.com</a>
+        <div>www.fuzonmedia.com conatct @ +91 9831053006,E-mail:info@fuzonmedia.com</div>
+        </div>
+                <!-- FOOTER -->
+              <footer>
+                <p class="pull-right">
+
+
+                <a href="#">Back to top</a></p>
+                <p><a href="#"  class="fcbk">Facebook</a>
+        <a href="#"  class="twtr">Twitter</a>
+                </p>
+                <p>&copy; 2013 Company, Inc. &middot; <a href="#">About Us</a>  &middot;  <a href="#">Contact Us</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#">Sitemap</a> </p>
+              </footer>
+                </p>
+              </div>
+            </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-spinners/dist/angular-spinners.min.js"></script>
+    <script src="bower_components/angular-ui-notification/dist/angular-ui-notification.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/appctrl.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/register.js"></script>
+        <script src="scripts/controllers/dashboard.js"></script>
+        <script src="scripts/controllers/order.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

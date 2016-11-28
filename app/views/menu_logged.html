@@ -1,0 +1,9 @@
+<ul ng-repeat="menu in $parent.MENU.LOGGEDIN" class="nav nav-pills nav-stacked">
+  <li role="presentation" ng-class="$parent.active_location===menu.url ? 'active' :'' ">
+    <a href="#{{menu.url}}" ng-if="menu.url!==''">{{menu.name}}</a>
+    <a href="" ng-if="menu.url===''">{{menu.name}}</a>
+    <ul ng-repeat="submenu in menu.child" class="nav nav-pills nav-stacked">
+      <li role="presentation" ng-class="$parent.active_location===submenu.url ? 'active' :'' "><a href="#{{submenu.url}}">{{submenu.name}}</a></li>
+    <ul>
+  </li>
+</ul>
