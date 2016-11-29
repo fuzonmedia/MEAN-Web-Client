@@ -11,12 +11,14 @@
 8. AngularJS  config , constant , service , factory implementation
 9. HTTP Interceptors implementation
 10. Using angularSpinners , ui-notifications
+11. Ready to deploy in heroku
 
-## Live Demo : 
+## Live Demo : https://mean-web-client.herokuapp.com/#/login
+Login credential (niltest3/123456) or register here https://mean-web-client.herokuapp.com/#/register   
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+Run `grunt build` for building and `grunt serve` for preview in localhost
 
 ## Testing
 
