@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc overview
- * @name testApp
+ * @name MeanAppWebClient
  * @description
- * # testApp
+ * # MeanAppWebClient
  *
  * Main module of the application.
  */
